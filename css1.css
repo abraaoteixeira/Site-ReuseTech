@@ -10,7 +10,6 @@
 body {
     width: 100%;
     height: 100vh;
-    margin: auto;
     background-image: url(image/background-efeito.png), url(image/backgrond-fundo.png);
     background-repeat: no-repeat;
     background-color: black;
@@ -112,7 +111,6 @@ button{
 }
 
 footer{
-    grid-area: "footer";
     display: flex;
     width: auto;
     background-color: rgb(50, 61, 61);
@@ -138,26 +136,93 @@ div .eventos a,img {
     text-shadow: 1px 1px 5px black;
 }
 
-
-
-
-@media (max-width: 820px) {
+@media only screen and (max-width: 400px) {     
+    header {
+    flex-direction: column;
+    padding: 20px;
+    }
+    
+    header > nav {
+    padding: 10px;
+    }
+    
     main {
-        grid-template-areas:
-        "frase"
-        "card"
-        "footer"
-        ;
+    grid-template-areas:
+    "frase"
+    "card"
+    "footer";
+    grid-template-rows: 30vh 50vh 20vh;
+    }
+    
+    div.card {
+    margin: 0 auto;
+    width: 80%;
+    height: 60%;
+    }
+    
+    h1 {
+    font-size: 30px;
+    width: 80%;
+    }
+    
+    button {
+    width: 80%;
+    height: 30px;
+    margin: 10px 0px;
+    }
+    
+    footer {
+    flex-direction: column;
+    }
+    
+    div .especial img, div .eventos a,img {
+    max-width: 200px;
     }
 }
 
-
-@media (max-width: 520px) {
+@media only screen and (max-width: 320px) {
+    body {
+    padding: 5px;
+    }
+    
+    header {
+    flex-direction: column;
+    }
+    
+    header > nav {
+    padding: 20px 0px;
+    text-align: center;
+    }
+    
     main {
-        grid-template-areas:
-        "frase"
-        "card"
-        "footer"
-        ;
+    grid-template-areas: "frase" "card" "footer";
+    grid-template-rows: auto;
+    grid-template-columns: 100%;
+    margin: 10px 10px auto;
+    }
+    
+    div.card {
+    margin: 20px 0px;
+    width: 90%;
+    height: auto;
+    }
+    
+    h1 {
+    font-size: 30px;
+    width: 100%;
+    text-align: center;
+    }
+    
+    button {
+    width: 100%;
+    }
+    
+    footer {
+    flex-direction: column;
+    align-items: center;
+    }
+    
+    .redes a {
+    font-size: 10px;
     }
 }
